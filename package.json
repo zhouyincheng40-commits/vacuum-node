@@ -1,0 +1,46 @@
+{
+  "name": "vacuum-node",
+  "version": "0.1.0",
+  "description": "One-command cleanup for stale node_modules and regenerable JS caches.",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "nodejs",
+    "disk-cleanup",
+    "node_modules",
+    "developer-tools",
+    "typescript"
+  ],
+  "bin": {
+    "vacuum-node": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/cli.js",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test --test-reporter=spec test/*.test.js",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouyincheng40-commits/vacuum-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhouyincheng40-commits/vacuum-node/issues"
+  },
+  "homepage": "https://github.com/zhouyincheng40-commits/vacuum-node#readme",
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  }
+}
